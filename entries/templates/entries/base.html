@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>INNOWEB</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'entries/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'entries/css/home.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+         <img src="{% static 'entries/images/logo.jpg' %}" height=55 width=220 class="d-inline-block align-top" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <!--- <li class="nav-item active">
+            <a class="nav-link" href="{% url 'create_entry' %}">Create</a>
+          </li> --->
+        <div class="dropdown">
+              <button class="btn btn-outline-warning text-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <img src="{% static 'entries/images/user.png' %}" height=30 width=30 class="d-inline-block align-top" />
+                   {{ user.username }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Messages</a>
+                <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
+              </div>
+        </div>
+          <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden" />
+          </form>
+            {% else %}
+                   <a class="nav-link text-dark" href="{% url 'login' %}">LOGIN</a>
+                   <a class="nav-link btn text-white" href="{% url 'register' %}" style="background-color: orange">CREATE AN ACCOUNT</a>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+
+        {% block content %} {% endblock %}
+      <!-- Sidebar Widgets Column -->
+
+
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  <footer class="py-5 bg-dark" >
+    <div class="container">
+        <div class="row">
+      <div class="col-md-4">
+        <h6 class="text-white">Official Partners Business Page</h6>
+      <a href="https://www.facebook.com/lovefusionbrazilian"><h7 class="text-white" href="">InnoTrends Page</h7></a>
+      <br/>
+      <a href="https://web.facebook.com/LoveFusion-Brazilian-Blowout-by-MK3-113657833423383?_rdc=1&_rdr"><h7 class="text-white">MK3 Enterprises</h7></a>
+      <br/>
+      <a href="https://web.facebook.com/LoveFusion-Hair-Beauty-Skin-Care-501932860167218?_rdc=1&_rdr"><h7 class="text-white">LoveFusion Enterprises</h7></a>
+      <br/>
+      <a href="https://web.facebook.com/LoveFusion-Brazilian-Blowout-Enterprises-Main-104484404451159?_rdc=1&_rdr"><h7 class="text-white">LoveFusion Main Branch</h7></a>
+      <br/>
+      <a href="https://www.facebook.com/LoveFusionBrazilianBlowout"><h7 class="text-white">Clissy Enterprises</h7></a>
+      <br/>
+      <a href="https://www.facebook.com/LoveFusionbyRever"><h7 class="text-white">Rever Enterprises</h7></a>
+      <br/>
+      <a href="https://www.facebook.com/Vens-zillian-Blowout-Commonwealth-107053364036710"><h7 class="text-white">VenZilian Enterprises</h7></a>
+      <br/>
+      <a href="https://www.facebook.com/Demarcs-Brazillian-Blowout-Hair-Keratin-102256841201039"><h7 class="text-white">Demarcs Marketing</h7></a>
+      </div>
+
+      <div class="col-md-4">
+           <h6 class="text-center text-white">Be Financially Free, In The Comfort of Your Time</h6>
+      <p class="text-center text-white">Contact Information</p>
+      <p class="text-center text-white">693-9204</p>
+      <p class="text-center text-white">innotrends.corp@gmail.com</p>
+      </div>
+
+      <div class="col-md-4">
+      <h5 class="text-center text-white">Follow us</h5>
+      <p class="text-center text-white"><a>Facebook</a></p>
+      <p class="text-center text-white"><a>Instagram</a></p>
+            </div>
+        </div>
+    </div>
+
+<style>
+body{
+    background: #eeeeee;
+}
+hr {
+  border: 1px solid orange;
+}
+</style>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'entries/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'entries/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+</body>
+
+</html>

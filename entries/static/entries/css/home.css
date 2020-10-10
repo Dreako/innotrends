@@ -1,0 +1,39 @@
+
+.featured-categories{
+    margin: 50px 0;
+}
+.featured-categories img {
+    width: 100%;
+    padding: 20px 0;
+}
+/*==================== tittle box -------- */
+.title-box{
+    background-color: orange;
+    color: #fff;
+    width: 185px;
+    padding: 4px 13px;
+    height: 42px;
+    margin-bottom: 30px;
+    display: flex;
+}
+.title-box h2{
+    font-size: 24px;
+}
+.title-box::after{
+    content: '';
+    border-top: 42px solid orange;
+    border-right: 50px solid transparent;
+    position: absolute;
+    display: flex;
+    margin-top: -4px;
+    margin-left: 170px;
+}
+/*------------------ feature ----------------*/
+
+.footer h2{
+    font-size: 15px;
+    margin: 25px 0;
+}
+.footer p{
+    font-size: 12px;
+}

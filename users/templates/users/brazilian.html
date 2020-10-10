@@ -1,0 +1,61 @@
+{% extends 'entries/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="description-categories">
+<br/>
+<br/>
+<br/>
+<br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'entries/images/brazlian.jpg' %}">
+            <br/>
+            <br/>
+            <br/>
+            </div>
+            <div class="col-md-7 offset-1">
+                <h1>Brazilian Blowout</h1>
+                    <p>by: Love Fussion</p>
+                <br/>
+                    <h2>Benefits of Brazilian Blowout:</h2>
+                    <li>Restore damage hair.</li>
+                    <li>Hair will be shiny, silky, smooth and straight with volume.</li>
+                    <li>Improve the texture and condition of the ends.</li>
+                <br/>
+                <h2>HOW TO APPLY:</h2>
+                    <li>Wash Hair with any profesional clarifying shampoo.</li>
+                    <li>Blow dry up to 70-90% dry, Section hair then evenly apply Brazilian Restoration Cream onto section hair.(Notice: keep 1 cm away from hair ends), later comb hair evenly. Leave Cream 30-60 minutes onto the hair or until 100% dry.</li>
+                    <li>Rinse hair lightly with warm water. (DO NOT Shampoo hair).</li>
+                    <li>Blowdry hair until 100% dry.</li>
+                    <li>Section hair then use iron straightener. VERY IMPORTANT: Select appropriate flat iron temperature below:
+                    450 degrees fahrentheit (232 degrees Celcius) for normal hair.
+                    430 degrees fahrentheit (221 degrees Celcius) for fine hair.
+                    350-400 degrees fahrentheit (177-204 Celcius) for over-bleached hair.
+                    </li>
+                    <li>Leave hair out of water for 2-3 days.</li>
+            </div>
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-danger">GO BACK</a>
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+</section>
+<style>
+description-categories
+{
+    margin: 50px 0;
+}
+.description-categories img
+{
+    width: 130%;
+    padding: 20px 0;
+}
+
+</style>
+{% endblock %}

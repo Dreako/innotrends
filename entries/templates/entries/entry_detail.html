@@ -1,0 +1,79 @@
+{% extends 'entries/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Blog Entries Column -->
+<div class="col-md-8 offset-2">
+        <h1 class="my-4">
+            <br/>
+        </h1>
+          <br/>
+          <br/>
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <!-- <img class="card-img-top" src="{% static 'entries/images/logo.jpg' %}" alt="Card image cap"> -->
+          <div class="card-body">
+            <h1 class="card-title">{{ object.entry_title }}</h1>
+          <hr/>
+            <p class="card-text">{{ object.entry_text|linebreaks }}</p>
+          <br/>
+
+
+          <form action="{% url 'like_post' entry.pk %}" method="POST">
+              {% csrf_token %}
+          {{ total_likes }} Likes
+          <br/>
+          <hr/>
+          {% if user.is_authenticated %}
+              {% if liked %}
+              <button type="submit" name="entry_id" value="{{ entry.id }}" class="btn btn-danger btn-sm">Unlike</button>
+              {% else %}
+              <button type="submit" name="entry_id" value="{{ entry.id }}" class="btn btn-primary btn-sm">Like</button>
+              {% endif %}
+              <a href="{% url 'add_comment' entry.pk %}" class="btn btn-primary btn-sm">Comment</a>
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Like</a>
+          <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Comment</a>
+          {% endif %}
+          <br/>
+
+          </form>
+            <hr/>
+
+            {% if not entry.comments.all %}
+            <br/>
+            {% else %}
+                {% for comment in entry.comments.all %}
+
+                <blockquote class="blockquote">
+                  <p class="mb-0">{{ comment.content }}</p>
+                  <footer class="blockquote-footer sm-2">by <cite title="Source Title">{{ comment.user }} {{ comment.timestamp }}</cite></footer>
+                </blockquote>
+
+                {% endfor %}
+
+                 <br/>
+            {% endif %}
+
+          </div>
+
+          <div class="card-footer text-muted">
+            Posted on {{ object.entry_date }} by:
+            <span class="text-primary btn-sm">{{ object.entry_author }}</span>
+          </div>
+
+
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-danger offset-5">GO BACK</a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'entries/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Blog Entries Column -->
+      <div class="col-md-10 offset-1">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+        <div class="card mb-3">
+        <div class="card-body">
+         <div class="float-right">
+                <img class="card-img-top" src="{% static 'entries/images/partnership.jpg' %}" alt="Card image cap">
+         </div>
+        <br/>
+        <br/>
+        <br/>
+            <h1>Login</h1>
+
+            <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            Username:
+            <br />
+            <input type="text" name="username" />
+            <br />
+            Password:
+            <br />
+            <input type="password" name="password" />
+            <br />
+            <br />
+            <input class="btn btn-primary" type="submit" value="Login" />
+            </form>
+            <br/>
+{% if error %}
+
+<div class="alert alert-danger w-25" role="alert">
+{{ error }}
+</div>
+
+{% endif %}
+
+        </div>
+        </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+      </div>
+{% endblock %}

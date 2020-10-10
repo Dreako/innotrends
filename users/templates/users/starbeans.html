@@ -1,0 +1,83 @@
+{% extends 'entries/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="description-categories">
+<br/>
+<br/>
+<br/>
+<br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'entries/images/coffee1.jpg' %}">
+            <br/>
+            <br/>
+            <br/>
+            </div>
+            <div class="col-md-7 offset-1">
+                <h1>Starbeans Coffee</h1>
+                    <p>by: Innotrends</p>
+                <br/>
+
+                    <h2>12 in 1 INGREDIENTS:</h2>
+                <div class="row">
+                    <div class="col-md-5" >
+                        <ul>
+                            <li>NON DAIRY CREAMER</li>
+                            <li>COFFEE POWDER</li>
+                            <li>MANGOSTEEN EXTRACT</li>
+                            <li>AGARICUS MUSHROOM</li>
+                            <li>GARCINIA CAMBOGIA</li>
+                            <li>GREEN TEA EXTRACT</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4" >
+                        <ul>
+                            <li>GLUTATHIONE</li>
+                            <li>GINGKO BILOBA</li>
+                            <li>COLLAGEN</li>
+                            <li>STEVIA</li>
+                            <li>CINNAMON</li>
+                            <li>ACAI BERRY</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <br/>
+                <h2>DIRECTIONS</h2>
+                    <li>HOT - Empty contents of one sachet into cup add hot water.
+                    (approx.150 ml.) stir well and server.</li>
+                    <li>Cold - Dissolve contents of water one sachet in a small amount of hot water. Fill cup glass with cold tap water (up to 150 ml.) stir well. add ice and serve.</li>
+                <br/>
+                <h2>STORAGE CONDITION</h2>
+                    <li>Store in a cool dry place away from direct sunlight, moisture and heat.</li>
+                <br/>
+                <h2>CAUTION</h2>
+                    <li>Not recommended for children, pregnant and lactating women.</li>
+            </div>
+
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-danger">GO BACK</a>
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+</section>
+<style>
+description-categories
+{
+    margin: 50px 0;
+}
+.description-categories img
+{
+    width: 130%;
+    padding: 20px 0;
+}
+
+</style>
+{% endblock %}
